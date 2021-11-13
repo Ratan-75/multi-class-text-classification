@@ -133,6 +133,192 @@ The useful information that needs to be captured from the HTML code could be fou
 
 ---------------------------------------------------------------------------------------------------
 
+### Extracting Information from HTML Classes and HTML Tags ###
+
+*Information to be captured such as Products name & Product description
+*These attributes could be extracted from div tags and HTML classes
+*The find_all( ) method in BeautifulSoup finds all instances where the given tags & classes are found 
+*Throughout the web API, we could filter based on tags & classes on the attributes and extract the text
+*The process could be repeated to extract all the relevant information required
+
+---------------------------------------------------------------------------------------------------
+
+### Pandas DataFrame ###
+
+A DataFrame is a 2-dimensional data structure with rows and columns, it could be thought of as a spreadsheet or SQL table.
+The information collected via Web Scraping can be loaded to a xlsx file or csv file with DataFrame.
+DataFrame is one of the functionality of Pandas library
+DataFrame features:
+Columns headers are usually of different data types and represent attributes of dataset.
+DataFrame are mutable, i.e.; could be expanded with additional information or remove existing data.
+DataFrame is labelled with respect to rows and columns.
+DataFrame could be created from various inputs: Lists or Dictionaries
+
+---------------------------------------------------------------------------------------------------
+
+### Python Dictionaries ###
+
+Dictionaries could be easily converted to DataFrame which then could be loaded to a csv file for later use.
+Dictionaries in Python are usually a set of data having a relationship of Key : Value pairing. Each Key is separated from its value by a colon. The whole data in the dictionary is enclosed in curly braces { }.
+Dictionary construction using Product, Description, Platform, Price as column headers or Keys of the dictionary, the information collected via web scraping are stored as values against the column headers.
+The dictionary data could be converted into a DataFrame by using the DataFrame method in the pandas library.
+
+---------------------------------------------------------------------------------------------------
+
+
+### Classification ###
+
+Classification algorithm tries to accurately assign the test data to specific category or categories.
+Classification refers to predictive modelling algorithm or technique where a class label is predicted for a given set of input data.
+Classification will require training dataset with lots of inputs and precise outputs from which it would learn.
+Classification algorithms are evaluated based on their output(s) i.e., predictions.
+Prediction accuracy is a popular metric to discern the performance of the Classification model.
+Prediction accuracy is never perfect, but a model having an accuracy of 80%-90% is an considered an good model.
+
+---------------------------------------------------------------------------------------------------
+
+### Classification types and algorithms ###
+
+Three main types of classifications:
+Binary Classification (contains two class labels – positive/negative or True/False)
+Multi-Class Classification (multiple class labels with only one predicted label per input)
+Multi-Label Classification (multiple class labels with more than one prediction label per input)
+Few of the widely used algorithms for Classification are:
+Decision Trees 
+Support Vector Machines 
+K-Nearest Neighbours
+
+---------------------------------------------------------------------------------------------------
+
+
+### Multi-Class Classification ###
+
+Multi-Class Classification refers
+to classification tasks that have more than 2 class labels.
+
+Data is classified among a range of known classes.
+
+The number of class labels will depend on the Classification task and dataset that is to be classified.
+
+Predicting a sequence of words, Text translation, Face recognition are few examples of Multi-Class Classification.
+
+The size of the vocabulary would define the number of features.
+The text from which the predictions are made could be tens or hundreds of thousands of words in size depending upon on the task.
+
+---------------------------------------------------------------------------------------------------
+
+### Multi Class Text Classification ###
+
+Text classification is a supervised learning method which will need labelled data to train the model.
+It requires Data Analysis & Text Processing techniques on data before applying to a training model.
+Features are attributes from which the prediction behaviour is based on, we could create features from the text descriptions.
+Scikit-learn is a Python library to create a matrix of features from count of the words in the text descriptions, few methods in Scikit-learn to accomplish this:
+CountVectorizer
+Term frequency-inverse document frequency (tfidf)
+
+---------------------------------------------------------------------------------------------------
+
+### Data Visualization ###
+
+Matplotlib is a python library to create interactive visualizations in Python.
+It provides an object-oriented API for embedding plots into applications.
+matplotlib.pyplot is a collection of command style functions for data visualisations.
+Few of the widely used visualisations:
+Bar (Make a bar plot)
+Hist (Plot a histogram)
+Pie (Plot a pie chart)
+
+---------------------------------------------------------------------------------------------------
+
+### Features Extraction ###
+
+Scikit learn has several methods with which features could be extracted from a dataset.
+TfidfVectorizer and similarly CountVectorizer imported from Scikit learn follow 4 sequential steps:
+
+Import the function
+Instantiate the method by assigning it to a variable
+The Fit( ) method is used to fit the data according to the parameters passed
+Transform( ) is used to transform the fitted data into a matrix or a vectored matrix
+
+---------------------------------------------------------------------------------------------------
+
+### train_test_split ###
+
+train_test_split : will split the arrays or matrices into random train and test data subsets.
+train_test_split( ) function takes in a parameter a labelled data as input and splits the dataset into two subsets for training and  testing. 
+We don't have to divide the dataset manually.
+Single call for splitting data in a one liner into training subset and testing subset.
+Takes in as parameters the data array that needs to be divided.
+
+---------------------------------------------------------------------------------------------------
+
+### CountVectorizer and TfidfTransformer ###
+
+CountVectorizer converts a group of text descriptions to a matrix of token counts.
+It has the capability to tokenize a collection of text and build a vocabulary of common words. (Bag of Words)
+TfidfTransformer will transforms a count matrix (Bag of words) to a normalized tf or tfidf representation.
+The goal of using tfidf is to scale down the impact of tokens that occur very frequently in a given dataset and hence avoid the features that are empirically less informative than features that occur in a small fraction in the training dataset.
+
+Term Frequencies – denotes number of occurrences of each word in a text description divided by the total number of words in that description.
+Term Frequency - Inverse Document Frequency – (tfidf) downscales the weights for those words that occur in many documents or almost all documents and are therefore less informative and redundant than those that occur only in a smaller portion.
+
+---------------------------------------------------------------------------------------------------
+
+### Model Selection ###
+
+Support Vector Classification’s (sklearn.svm.SVC) implementation is based on libsvm which is one of the fit( ) method available in Scikit learn for developing a model.
+Any classifier algorithm imported from Scikit learn follow 4 sequential steps:
+
+For larger datasets LinearSVC is more practical method.
+Another model available in Scikit learn is Naive Bayes classifier : sklearn.naive_bayes.MultinomialNB
+
+---------------------------------------------------------------------------------------------------
+
+
+### LinearSVC ###
+
+The objective of a LinearSVC (Support Vector Classifier) is to fit to the data provided, such that  the  "best fit" model would divide and categorize the data.
+Linear Support Vector Classifier (SVC) method generally tries to construct a linear kernel function to perform classification and it would usually perform well if the input dataset has large number of samples.
+The features needed to be passed in to LinearSVC ( ) to evaluate what the "predicted" class is.
+After fitting the model on training data, predictions could be made and model accuracy score can be calculated.
+
+---------------------------------------------------------------------------------------------------
+
+
+### Improving the Prediction accuracy scores ###
+
+Predictions in Classification problems, especially text classification would require Good Data.
+
+The Quality of the labelled data directly corresponds to the better prediction scores.
+
+There are few techniques that could be implemented to improve prediction accuracy:
+
+-Add more data
+-Feature Engineering & Feature Selection	
+-Testing Multiple algorithms
+-Treat missing and Outlier values
+
+---------------------------------------------------------------------------------------------------
+
+
+### Conclusions ###
+
+The major scope of the project involves in analysing a group of text descriptions, loading the file content with the corresponding categories, using feature extraction techniques to create feature vectors that would be suitable for developing machine learning classification models to perform categorization.
+Web Scraping methods are implemented to extract the data required to train the Classifier.
+Web harvesting methods and technologies are increasing in relevance as data has become the basis on which all decision-making processes are implemented.
+Software Product Classification find major applications in Software Asset Management (SAM), which is rapidly becoming an Billion dollar industry.
+
+---------------------------------------------------------------------------------------------------
+
+-------------------------------*********************************-----------------------------------
+
+---------------------------------------------------------------------------------------------------
+
+
+
+
+
+
 
 
 
