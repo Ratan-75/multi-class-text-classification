@@ -1,0 +1,15 @@
+l=[]
+base_url = "https://download.cnet.com/video/"
+for page in range(2,5,1):
+    r=requests.get(base_url+str(page)+"/")
+    print(page)
+    c = r.content
+    soup = BeautifulSoup(c,"html.parser")
+    gec = soup.find_all("div", {"class" : "c-globalCard lg:u-col-3 md:u-col-3 sm:u-col-2 c-productCard u-flexbox-column c-productCard-detailed"})
+    for item in gec:
+        d={}
+        d["Product"]=item.find("h3", {"class": "c-productCard_title g-text-large g-text-bold g-outer-spacing-bottom-xsmall"}).text
+        d["Description"]=item.find("div", {"class": "c-productCard_summary g-text-small g-color-gray70"}).text
+        d["Platform"]=item.find("span",{"class": "g-text-xsmall"}).text
+        d["Price"]=item.find("div", {"class": "c-productCard_subhead u-text-uppercase g-color-primary g-text-bold g-text-xsmall"}).text
+        l.append(d)
